@@ -20,6 +20,9 @@ public class Controller {
 		sd = new ShopDAO();
 		id = new InventoryDAO();
 		p = new Player();
+	}
+	
+	public void run() {
 		MainMenu();
 	}
 

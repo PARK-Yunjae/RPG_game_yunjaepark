@@ -130,9 +130,10 @@ public class Utils {
 		File file = null;
 		FileReader reader = null;
 		BufferedReader br = null;
-		String path = "gameData.txt";
+		String fileName = "gameData.txt";
+		String path = CUR_PATH + fileName;
 		file = new File(path);
-		if (file.exists()) {
+		if (file.exists()) {			
 			reader = new FileReader(path);
 			br = new BufferedReader(reader);
 			String money = br.readLine();
@@ -191,7 +192,6 @@ public class Utils {
 			}
 			// ===================== item ============================
 			String invenSize = br.readLine();
-			System.out.println(invenSize);
 			int inSize = Integer.parseInt(invenSize);
 
 			p.getPlayerItem().clear();
@@ -206,6 +206,6 @@ public class Utils {
 				p.getPlayerItem().add(item);
 			}
 		}
-		return path;
+		return fileName;
 	}
 }
