@@ -140,6 +140,7 @@ public class Utils {
 			p.setMoney(Integer.parseInt(money));
 			String guildSize = br.readLine();
 			int size = Integer.parseInt(guildSize);
+			gd.setCnt(size); 
 			gd.getUnitList().clear();
 			for (int i = 0; i < size; i++) {
 				String unitData = br.readLine();
@@ -188,7 +189,6 @@ public class Utils {
 					Item item = new Item(itemKind, itemName, itemPower, itemPrice);
 					gd.getUnitList().get(i).setRing(item);
 				}
-
 			}
 			// ===================== item ============================
 			String invenSize = br.readLine();

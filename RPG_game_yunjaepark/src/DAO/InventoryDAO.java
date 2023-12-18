@@ -95,17 +95,20 @@ public class InventoryDAO {
 		partyIdx = partyPrint(gd);
 		int unitIdx = Utils.getInt("선택>>", 1, partyIdx.size())-1;
 		if (unitIdx == -2) return;
+		gd.getUnitList().get(partyIdx.get(unitIdx)).PrintStatus();
+		gd.getUnitList().get(partyIdx.get(unitIdx)).PrintEquitedItem();
 		System.out.println("== [탈착부위] ==");
 		System.out.println("[1] 무기");
 		System.out.println("[2] 갑옷");
 		System.out.println("[3] 반지");
-		int takeOffIdx = Utils.getInt("선택>>", 1, 3)-1;
+		int takeOffIdx = Utils.getInt("선택>>", 1, 3);
 		if (unitIdx == -1) return;
 		
 		if(takeOffIdx == 1) {
 			if(gd.getUnitList().get(partyIdx.get(unitIdx)).getWeapon() != null) {
 				p.getPlayerItem().add(gd.getUnitList().get(partyIdx.get(unitIdx)).getWeapon());
 				gd.getUnitList().get(partyIdx.get(unitIdx)).setWeapon(null);
+				System.out.println("탈착 완료");
 			}else { 
 				System.out.println("벗을 장비가 없습니다");
 			}
@@ -114,6 +117,7 @@ public class InventoryDAO {
 			if(gd.getUnitList().get(partyIdx.get(unitIdx)).getArmor() != null) {
 				p.getPlayerItem().add(gd.getUnitList().get(partyIdx.get(unitIdx)).getArmor());
 				gd.getUnitList().get(partyIdx.get(unitIdx)).setArmor(null);
+				System.out.println("탈착 완료");
 			}else { 
 				System.out.println("벗을 장비가 없습니다");
 			}
@@ -122,10 +126,12 @@ public class InventoryDAO {
 			if(gd.getUnitList().get(partyIdx.get(unitIdx)).getRing() != null) {
 				p.getPlayerItem().add(gd.getUnitList().get(partyIdx.get(unitIdx)).getRing());
 				gd.getUnitList().get(partyIdx.get(unitIdx)).setRing(null);
+				System.out.println("탈착 완료");
 			}else { 
 				System.out.println("벗을 장비가 없습니다");
 			}
 		}
+		
 	}
 
 	private void SellItem(Player p) {

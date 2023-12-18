@@ -13,6 +13,10 @@ public class GuildDAO {
 	private final int PARTY_SIZE = 4;
 	private int cnt;
 	
+	public void setCnt(int cnt) {
+		this.cnt = cnt;
+	}
+
 	public ArrayList<Unit> getUnitList() {
 		return unitList;
 	}
