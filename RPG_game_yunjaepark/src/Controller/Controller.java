@@ -2,6 +2,9 @@ package Controller;
 
 import Utils.Utils;
 import VO.Player;
+
+import java.io.IOException;
+
 import DAO.GuildDAO;
 import DAO.InventoryDAO;
 import DAO.ShopDAO;
@@ -42,7 +45,13 @@ public class Controller {
 		} else if (sel == 4) {
 			Utils.FileSave(gd, sd, id, p);
 		} else if (sel == 5) {
-			Utils.FileLoad(gd, sd, id, p);
+			String name = "";
+			try {
+				name = Utils.FileLoad(gd, sd, id, p);
+				System.out.println(name+"로드 완료");
+			} catch (IOException e) {
+				System.out.println(name+"로드 실패");
+			}
 		}
 		return sel;
 	}
