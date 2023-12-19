@@ -1,0 +1,15 @@
+70000
+6
+최광석/1/22/3/2/true
+null/null/null
+손명재/1/33/4/2/true
+null/null/null
+김민재/1/88/9/5/true
+null/null/null
+이지수/1/55/6/3/true
+null/null/null
+손명수/1/55/6/3/false
+null/null/null
+윤지수/1/33/4/2/false
+null/null/null
+0
